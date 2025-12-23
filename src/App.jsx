@@ -72,11 +72,25 @@ function App() {
               <a href="/wordpress/" className="btn">記事を読む</a>
             </div>
 
-            {/* メンバーページへのリンク */}
+            {/* シミュレーション1: メール詐欺 */}
             <div className="card">
-              <h3>フィッシング詐欺体験</h3>
-              <p>よくある詐欺の手口を体験する</p>
-              <a href="/c0b99001/" className="btn">シミュレーションへ</a>
+              <h3>メール詐欺体験</h3>
+              <p>怪しいメールのリンクをクリックするとどうなる？</p>
+              <a href="/c0a24220" className="btn">体験する</a>
+            </div>
+
+            {/* シミュレーション2: 偽サイト */}
+            <div className="card">
+              <h3>偽ログイン画面</h3>
+              <p>本物そっくりの偽サイトを見破れますか？</p>
+              <a href="/c0b99001/login/" className="btn">体験する</a>
+            </div>
+
+            {/* シミュレーション3: サポート詐欺 */}
+            <div className="card">
+              <h3>サポート詐欺</h3>
+              <p>突然の警告画面！その時どう動く？</p>
+              <a href="/c0b99001/support/" className="btn">体験する</a>
             </div>
 
             <div className="card">
