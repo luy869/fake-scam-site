@@ -1,16 +1,76 @@
-# React + Vite
+# Team Top Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+このリポジトリは、Vite + React を使用したチームのトップページプロジェクトです。
 
-Currently, two official plugins are available:
+## 概要
+- **フレームワーク**: React 19.2.0
+- **ビルドツール**: Vite 7.2.4
+- **ルーティング**: React Router DOM 7.11.0
+- **目的**: チームのトップページとポップアップ広告機能の実装
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 前提条件
+- Node.js (推奨: 16以上)
+- npm または yarn
 
-## React Compiler
+## セットアップ
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 依存関係のインストール
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+### 開発サーバの起動
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ビルド
+```bash
+npm run build
+```
+
+### ビルドのプレビュー
+```bash
+npm run preview
+```
+
+### Lint
+```bash
+npm run lint
+```
+
+## プロジェクト構成
+
+```
+team-top-page/
+├── public/              # 静的ファイル
+├── src/
+│   ├── main.jsx        # エントリーポイント
+│   ├── index.css       # グローバルスタイル
+│   ├── assets/         # 画像などのアセット
+│   ├── components/     # 再利用可能なコンポーネント
+│   │   ├── Card.jsx
+│   │   ├── HackingEffect.jsx
+│   │   ├── ScamPopup.jsx      # ポップアップ広告コンポーネント
+│   │   └── ScamPopup.css
+│   └── pages/          # ページコンポーネント
+│       ├── TopPage.jsx        # メインのトップページ
+│       ├── TopPage.css
+│       ├── PopupScam.jsx      # ポップアップのデモページ
+│       └── PopupScam.css
+├── index.html
+├── vite.config.js
+└── package.json
+```
+
+## 主な機能
+
+### トップページ (`TopPage.jsx`)
+- チームメンバーの情報表示
+- カードコンポーネントを使用したレイアウト
+- ハッキングエフェクトの実装
+
+### ポップアップ広告 (`ScamPopup.jsx`)
+- 条件に基づいて表示されるポップアップコンポーネント
+- 閉じるボタン付き
+- アクセシビリティを考慮した実装
