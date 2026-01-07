@@ -1,0 +1,354 @@
+.popup-scam-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  position: relative;
+}
+
+.popup-scam-container.flashing {
+  animation: backgroundFlash 0.1s infinite;
+}
+
+@keyframes backgroundFlash {
+  0%, 100% { background-color: #f0f0f0; }
+  50% { background-color: #ff0000; }
+}
+
+.fake-site-bg {
+  padding: 20px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.fake-header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-placeholder {
+  background-color: #000;
+  height: 400px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-window {
+  background-color: white;
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+  overflow: hidden;
+  text-align: center;
+  animation: popIn 0.3s ease-out, mainPopupPulse 1s infinite;
+  border: 4px solid #ff4444;
+}
+
+@keyframes mainPopupPulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 0 0 50px rgba(255, 0, 0, 1);
+  }
+}
+
+.popup-header {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 22px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  animation: headerFlash 1s infinite;
+}
+
+@keyframes headerFlash {
+  0%, 100% { background: linear-gradient(135deg, #ff4444, #cc0000); }
+  50% { background: linear-gradient(135deg, #ff0000, #ff4444); }
+}
+
+.popup-body {
+  padding: 20px;
+}
+
+.popup-body h2 {
+  color: #d32f2f;
+  margin-top: 0;
+}
+
+.prize-img {
+  font-size: 60px;
+  margin: 10px 0;
+}
+
+.timer {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.timer-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 999px;
+  margin: 8px 0 14px;
+  overflow: hidden;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+}
+
+.timer-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff4444, #ffa000);
+  transition: width 0.3s linear;
+}
+
+.scam-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  animation: pulse 1s infinite, glow 1.5s infinite;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+  transition: all 0.3s;
+}
+
+.scam-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+  }
+  50% { 
+    box-shadow: 0 6px 40px rgba(76, 175, 80, 1);
+  }
+}
+
+.education-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 50, 100, 0.95);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  text-align: center;
+}
+
+.education-content {
+  max-width: 600px;
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.education-list {
+  text-align: left;
+  margin: 20px auto;
+  display: inline-block;
+}
+
+.back-link {
+  margin-top: 20px;
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.back-link:hover {
+  background-color: white;
+  color: #003264;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes popInCrazy {
+  0% { 
+    transform: scale(0) rotate(-180deg); 
+    opacity: 0; 
+  }
+  70% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 1; 
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-5px) rotate(-2deg); }
+  75% { transform: translateX(5px) rotate(2deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-1deg); }
+  50% { transform: translateY(0) rotate(1deg); }
+  75% { transform: translateY(3px) rotate(-1deg); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* 追加のポップアップ */
+.additional-popup {
+  position: fixed;
+  width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  z-index: 1500;
+  animation: popInCrazy 0.3s ease-out;
+  overflow: hidden;
+  border: 3px solid #000;
+  transform-origin: center;
+}
+
+.additional-popup:nth-child(odd) {
+  animation: popInCrazy 0.3s ease-out, shake 0.5s infinite;
+}
+
+.additional-popup:nth-child(even) {
+  animation: popInCrazy 0.3s ease-out, wiggle 0.6s infinite;
+}
+
+.additional-popup-header {
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+.additional-popup-body {
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.additional-popup-btn {
+  background-color: white;
+  border: 2px solid #333;
+  padding: 8px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  animation: buttonPulse 1s infinite;
+  pointer-events: none;
+}
+
+.additional-popup-btn:hover {
+  background-color: #f0f0f0;
+}
+
+@keyframes buttonPulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  50% { 
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0);
+  }
+}
+
+/* ブルースクリーン */
+.bsod-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0078d7;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bsod-content {
+  max-width: 600px;
+  padding: 40px;
+}
+
+.bsod-content h1 {
+  font-size: 120px;
+  margin: 0 0 20px 0;
+}
+
+.bsod-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.bsod-progress {
+  font-size: 20px;
+  margin: 30px 0;
+  font-weight: bold;
+}
+
+.bsod-error {
+  font-size: 14px;
+  margin-top: 40px;
+  opacity: 0.8;
+}
